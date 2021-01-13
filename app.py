@@ -51,6 +51,9 @@ def respond():
        Welcome to DoggoBot, this bot brightens your day by showing you 
        a cute dog! Send any message to see a doggo.
        """
+       #show 'typing' under bot name
+       bot.sendChatAction(chat_id=chat_id, action="typing")
+       sleep(1.5)
        # send the welcoming message
        bot.sendMessage(chat_id=chat_id, text=bot_welcome, reply_to_message_id=msg_id)
 
@@ -61,6 +64,9 @@ def respond():
            text = re.sub(r"W", "_", text)
            # create the api link for the avatar based on
            photo_url = get_image_url()
+           #show 'sending photo' under bot name 
+           bot.sendChatAction(chat_id=chat_id, action="upload_photo")
+           sleep(2)
            # reply with a photo to the name the user sent,
            # note that you can send photos by url and telegram will fetch it for you
            bot.sendPhoto(chat_id=chat_id, photo=photo_url, reply_to_message_id=msg_id)
