@@ -49,8 +49,7 @@ def respond():
    if text == "/start":
        # print the welcoming message
        bot_welcome = """
-       Welcome to DoggoBot, this bot brightens your day by showing you 
-       a cute dog! Send any message to see a doggo.
+       Welcome to DoggoBot, this bot brightens your day by showing you a cute dog! Send any message to see a doggo.
        """
        #show 'typing' under bot name
        bot.sendChatAction(chat_id=chat_id, action="typing")
